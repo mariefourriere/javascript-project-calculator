@@ -1,7 +1,5 @@
 const arrayCalc = ['(', ')', '%', 'AC', '7', '8', '9', '/', '4', '5', '6', 'x', '1', '2', '3', '-', '0', '.', '=', '+']
 
-console.log(arrayCalc)
-
 let button
 let line
 
@@ -12,14 +10,20 @@ contentCalc.className = 'contentCalc card'
 
 document.body.appendChild(contentCalc);
 
-const results = document.createElement('div');
-results.className = 'displayResults'
+const resultsBox = document.createElement('div')
+resultsBox.className = 'resultsBox'
 
-const inputResults = document.createElement('div');
+const inputCalc = document.createElement('div');
+inputCalc.className = 'inputCalc'
 
+const displayResults = document.createElement('div');
+displayResults.className = 'displayResults'
 
-contentCalc.appendChild(results);
-results.appendChild(inputResults);
+document.body.appendChild(contentCalc);
+contentCalc.appendChild(resultsBox);
+resultsBox.appendChild(inputCalc);
+resultsBox.appendChild(displayResults);
+
 
 
 
@@ -46,33 +50,36 @@ for (let i = 0; i < arrayCalc.length; i++) {
         line.className = 'line'
     }
 
-    
-    function resultsAll() {
-        return inputResults.textContent;
+// functions for result - doesn t work yet
+// function calcResults() {
+//     return inputCalc.textContent
         
-    } 
+// } 
 
     let calculate = arrayCalc[i];
     switch (calculate) {
 
         case 'AC':
             button.addEventListener('click', function () {
-                inputResults.textContent = "";
+                inputCalc.textContent = "";
+                displayResults.textContent = "";
             });
             break;
 
         case '=':
             button.addEventListener('click', function () {
-                inputResults.textContent = resultsAll()
-
-                console.log(resultsAll);
+                displayResults.textContent = Function('return ' + inputCalc.textContent)();
+                // displayResults.textContent += ""
+                // displayResults.textContent += displayResults.textContent=Function('return ' + displayResults.textContent)();
+                // console.log(resultsAll);
             });
             break;
 
 
         default:
             button.addEventListener('click', function () {
-                inputResults.textContent += arrayCalc[i];
+                inputCalc.textContent += arrayCalc[i];
+                displayResults.textContent += arrayCalc[i];
 
             });
 
