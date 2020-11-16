@@ -1,4 +1,4 @@
-const arrayCalc = ['(', ')', '%', 'AC', '7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', '=', '+']
+const arrayCalc = ['(', ')','AC', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '=']
 
 let button
 let line
@@ -37,12 +37,12 @@ for (let i = 0; i < arrayCalc.length; i++) {
         button.className = 'button operators'
     }
 
-    if ((i === 7) || (i === 11) || (i === 15) || (i === 19)) {
+    if ((i === 7) || (i === 11) || (i === 15)) {
         button.className = 'button operators'
     }
 
     if (i === 18) {
-        button.className = 'button is-primary operators'
+        button.className = 'button is-primary operators buttonEqual'
     }
 
     if (i % 4 === 0) {

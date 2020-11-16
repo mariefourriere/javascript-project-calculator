@@ -4,19 +4,17 @@ body{
 }
 
 .contentCalc {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     width: 500px;
-    align-items: center;
     margin: 60px;
+    margin-left: 200px;
     border: 1px solid lightblue;
-    box-shadow: grey;
+    padding: 20px;
     }
 
 .button{
     width: 100px;
     margin: 10px;
+    
 }
 
 .operators{
@@ -25,28 +23,34 @@ body{
     font-weight: bold;
 }
 .inputCalc{
-    margin: 30px 30px 0px 30px;
+    margin: 30px;
     border: 1px solid lightblue;
     height: 50px;
-    width: 80%;
-    text-align: center;
-    padding:10px;
+    width: 400px;
+    text-align: right;
+    padding: 10px;
+    
 }
 
 .displayResults{
-    margin: 2px 30px 30px 30px;
+    margin: -26px 30px 30px 30px;
     border: 1px solid lightblue;
     height: 50px;
-    width: 80%;
+    width: 400px;
     text-align: center;
-    padding:10px;
+    font-size: 25px;
+    padding-top: 3px;
 }
 
 .resultsBox{
     width:80%;
 }
 
+.buttonEqual{
+width: 220px;
 
+
+}
 
 .line{
     display: flex;
