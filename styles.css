@@ -1,0 +1,39 @@
+body{
+    margin-top:100px;
+    
+}
+
+.contentCalc {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    margin: 60px;
+    border: 1px solid lightblue;
+    box-shadow: grey;
+    }
+
+.button{
+    width: 100px;
+    margin: 10px;
+}
+
+.operators{
+    background-color: lightgrey;
+    color: white;
+    font-weight: bold;
+}
+.results{
+    margin: 30px;
+    
+}
+
+.input{
+    width: 400px;
+}
+
+.line{
+    display: flex;
+    flex-direction: row;
+}
