@@ -24,9 +24,13 @@ body{
     color: white;
     font-weight: bold;
 }
-.results{
+.displayResults{
     margin: 30px;
-    
+    border: 1px solid lightblue;
+    height: 50px;
+    width: 80%;
+    text-align: center;
+    padding:10px;
 }
 
 .input{
