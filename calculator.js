@@ -1,4 +1,4 @@
-const arrayCalc = ['(', ')', '%', 'AC', '7', '8', '9', '/', '4', '5', '6', 'x', '1', '2', '3', '-', '0', '.', '=', '+']
+const arrayCalc = ['(', ')', '%', 'AC', '7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', '0', '.', '=', '+']
 
 let button
 let line
@@ -63,6 +63,12 @@ for (let i = 0; i < arrayCalc.length; i++) {
             button.addEventListener('click', function () {
                 inputCalc.textContent = "";
                 displayResults.textContent = "";
+            });
+            break;
+        
+        case '%':
+            button.addEventListener('click', function() {
+               inputCalc.textContent * (0.01);
             });
             break;
 
