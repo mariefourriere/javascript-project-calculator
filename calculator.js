@@ -31,7 +31,7 @@ resultsBox.appendChild(displayResults);
 for (let i = 0; i < arrayCalc.length; i++) {
     button = document.createElement('div')
     button.textContent = arrayCalc[i]
-    button.className = 'button is-primary is-inverted has-text-weight-bold'
+    button.className = 'button is-black is-inverted is-outlined has-text-weight-bold'
 
     //styling the buttons 
     if (i <= 3) {

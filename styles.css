@@ -11,41 +11,49 @@ body{
     margin-left: 200px;
     border: 2px solid lightblue;
     padding: 20px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    box-shadow: 3px 4px 12px 1px lightblue;
     }
 
 .button{
     width: 80px;
     margin: 10px;
-    
+    border-radius: 20px;
+    box-shadow: 3px 2px 4px 1px #979797;
 }
 
 .operators{
     background-color: hsla(0, 0%, 0%, 0.562);
     color: white;
     font-weight: bold;
+    border: none;
+    box-shadow: inset 3px 2px 4px 1px #5e5e5e;
 }
 .inputCalc{
-    margin: 30px;
-    border: 2px solid lightblue;
+    margin: 10px;
+    border: 0.5px solid lightblue;
     background-color: black;
     color: lightgrey;
     height: 50px;
-    width: 300px;
+    width: 340px;
     text-align: right;
     padding: 10px;
+    border-radius: 10px;
     
 }
 
 .displayResults{
-    margin: -26px 30px 30px 30px;
-    border: 2px solid lightblue;
+    margin: 2px 0px 30px 10px;
+    border: 0.5px solid lightblue;
     background-color: black;
     height: 50px;
-    width: 300px;
+    width: 340px;
     color: white;
     text-align: center;
     font-size: 25px;
     padding-top: 3px;
+    border-radius: 10px;
 }
 
 .resultsBox{
@@ -53,8 +61,8 @@ body{
 }
 
 .buttonEqual{
-width: 220px;
-
+    width: 185px;
+    box-shadow: 3px 2px 4px 1px #2f5853;
 
 }
 
