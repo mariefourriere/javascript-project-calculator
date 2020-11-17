@@ -2,6 +2,7 @@ const arrayCalc = ['(', ')','AC', '/', '7', '8', '9', '*', '4', '5', '6', '-', '
 
 let button
 let line
+let noDoubleDots = false
 
 document.querySelector('body');
 
@@ -24,6 +25,7 @@ document.body.appendChild(contentCalc);
 contentCalc.appendChild(resultsBox);
 resultsBox.appendChild(inputCalc);
 resultsBox.appendChild(displayResults);
+
 
 
 document.body.addEventListener('keypress', function(e){
@@ -56,6 +58,8 @@ for (let i = 0; i < arrayCalc.length; i++) {
     }
 
     
+     
+   
 
     let calculate = arrayCalc[i];
     switch (calculate) {
@@ -64,34 +68,109 @@ for (let i = 0; i < arrayCalc.length; i++) {
             button.addEventListener('click', function () {
                 inputCalc.textContent = "";
                 displayResults.textContent = "";
+                if(!noDoubleDots){
+                    noDoubleDots = true
+                    }
+                    noDoubleDots = false
+                
             });
             break;
         
-        case '%':
-            button.addEventListener('click', function() {
-               inputCalc.textContent * (0.01);
-            });
-            break;
-
         case '=':
             button.addEventListener('click', function () {
                 displayResults.textContent = Function('return ' + inputCalc.textContent)();
-            })
-            button.addEventListener('keypress', function(enter){
-                enter.preventDefault();
-                if (enter.Keycode === 13){
-
-                };
-            })    
+                if(!noDoubleDots){
+                    noDoubleDots = true
+                    }
                 
+            })
+                         
+                
+        case '.':
+            button.addEventListener('click', function () {
+                
+                if(!noDoubleDots){
+                noDoubleDots = true
+                inputCalc.textContent += "."
+                displayResults.textContent += "." 
+                }
             
-            break;
+                
+                
+        });      
+        break;
+
+        case '+':
+            button.addEventListener('click', function () {
+                inputCalc.textContent += "+"
+                displayResults.textContent += "+"
+                if(!noDoubleDots){
+                noDoubleDots = true
+               
+                }
+                noDoubleDots = false
+                
+                
+        });      
+        break;
+
+        case '-':
+            button.addEventListener('click', function () {
+                inputCalc.textContent += "-"
+                displayResults.textContent += "-" 
+                if(!noDoubleDots){
+                noDoubleDots = true
+                }
+                noDoubleDots = false
+                
+                
+        });      
+        break;
+
+        case '(':
+            button.addEventListener('click', function () {
+                inputCalc.textContent += "("
+                displayResults.textContent += "(" 
+                if(!noDoubleDots){
+                noDoubleDots = true
+                }
+                noDoubleDots = false
+                
+                
+        });      
+        break;
+
+        case ')':
+            button.addEventListener('click', function () {
+                inputCalc.textContent += ")"
+                displayResults.textContent += ")" 
+                if(!noDoubleDots){
+                noDoubleDots = true
+                }
+                noDoubleDots = false
+                
+                
+        });      
+        break;
+
+        case '*':
+            button.addEventListener('click', function () {
+                inputCalc.textContent += "*"
+                displayResults.textContent += "*" 
+                if(!noDoubleDots){
+                noDoubleDots = true
+                }
+                noDoubleDots = false
+                
+                
+        });      
+        break;
             
         default:
             button.addEventListener('click', function () {
                 inputCalc.textContent += arrayCalc[i];
                 displayResults.textContent += arrayCalc[i];
-
+                
             });
 
     };
