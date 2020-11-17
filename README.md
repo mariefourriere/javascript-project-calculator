@@ -1,4 +1,13 @@
-# Let's build a calculator
+# Building a calculator
+
+Here is the link to the [calculator](https://mariefourriere.github.io/calculator/)
+
+
+
+
+## the challenge
+
+At the end of this challenge you should be able to generate a simple app using the DOM utils and events.
 
 Using what we know about javascript, we're going to build a simple calculator app.
 
@@ -7,10 +16,6 @@ Using what we know about javascript, we're going to build a simple calculator ap
 - Team challenge: **solo**
 - Deadline: **18/11/2020 19:00**
 - [Submission form](https://forms.gle/UmTTfyF59kueUYhh7)
-
-## Learning objectives
-
-At the end of this challenge you should be able to generate a simple app using the DOM utils and events.
 
 ## The mission
 
@@ -30,8 +35,7 @@ At the end of this challenge you should be able to generate a simple app using t
 - Pressing enter to display the result (same as pressing the `=` button)
 - Make it pretty
 
-## Ressources
+## Preview
 
-Take a look at the [google calculator](https://www.google.com/search?q=calculator) for inspiration.
+![Preview image of the calculator](calculator.JPG)
 
-![google calculator](calculator.png)
