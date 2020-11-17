@@ -26,6 +26,10 @@ resultsBox.appendChild(inputCalc);
 resultsBox.appendChild(displayResults);
 
 
+document.body.addEventListener('keypress', function(e){
+    if (e.code === "Enter"){displayResults.textContent = Function('return ' + inputCalc.textContent)();
+    } 
+})
 
 
 for (let i = 0; i < arrayCalc.length; i++) {
@@ -51,11 +55,7 @@ for (let i = 0; i < arrayCalc.length; i++) {
         line.className = 'line'
     }
 
-// functions for result - doesn t work yet
-// function calcResults() {
-//     return inputCalc.textContent
-        
-// } 
+    
 
     let calculate = arrayCalc[i];
     switch (calculate) {
@@ -76,13 +76,17 @@ for (let i = 0; i < arrayCalc.length; i++) {
         case '=':
             button.addEventListener('click', function () {
                 displayResults.textContent = Function('return ' + inputCalc.textContent)();
-                // displayResults.textContent += ""
-                // displayResults.textContent += displayResults.textContent=Function('return ' + displayResults.textContent)();
-                // console.log(resultsAll);
-            });
+            })
+            button.addEventListener('keypress', function(enter){
+                enter.preventDefault();
+                if (enter.Keycode === 13){
+
+                };
+            })    
+                
+            
             break;
-
-
+            
         default:
             button.addEventListener('click', function () {
                 inputCalc.textContent += arrayCalc[i];
@@ -91,6 +95,9 @@ for (let i = 0; i < arrayCalc.length; i++) {
             });
 
     };
+
+   
+
     contentCalc.appendChild(line);
     line.appendChild(button);
 
