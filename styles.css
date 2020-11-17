@@ -1,33 +1,36 @@
 body{
     padding-top:50px;
-    background-color: lightgrey;
+    background-color: black;
     height: 100vh;
 }
 
 .contentCalc {
-    width: 500px;
+    width: 400px;
+    background-color:black;
     margin: 60px;
     margin-left: 200px;
-    border: 1px solid lightblue;
+    border: 2px solid lightblue;
     padding: 20px;
     }
 
 .button{
-    width: 100px;
+    width: 80px;
     margin: 10px;
     
 }
 
 .operators{
-    background-color: lightgrey;
+    background-color: hsla(0, 0%, 0%, 0.562);
     color: white;
     font-weight: bold;
 }
 .inputCalc{
     margin: 30px;
-    border: 1px solid lightblue;
+    border: 2px solid lightblue;
+    background-color: black;
+    color: lightgrey;
     height: 50px;
-    width: 400px;
+    width: 300px;
     text-align: right;
     padding: 10px;
     
@@ -35,9 +38,11 @@ body{
 
 .displayResults{
     margin: -26px 30px 30px 30px;
-    border: 1px solid lightblue;
+    border: 2px solid lightblue;
+    background-color: black;
     height: 50px;
-    width: 400px;
+    width: 300px;
+    color: white;
     text-align: center;
     font-size: 25px;
     padding-top: 3px;
