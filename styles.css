@@ -1,6 +1,7 @@
 body{
-    margin-top:100px;
-    
+    padding-top:50px;
+    background-color: lightgrey;
+    height: 100vh;
 }
 
 .contentCalc {

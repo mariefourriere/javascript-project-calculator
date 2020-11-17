@@ -5,6 +5,7 @@ let line
 
 document.querySelector('body');
 
+
 const contentCalc = document.createElement('div');
 contentCalc.className = 'contentCalc card'
 
