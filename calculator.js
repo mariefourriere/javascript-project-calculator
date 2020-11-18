@@ -9,7 +9,7 @@ document.querySelector('body');
 
 
 const contentCalc = document.createElement('div');
-contentCalc.className = 'contentCalc card'
+contentCalc.className = 'contentCalc'
 
 document.body.appendChild(contentCalc);
 
