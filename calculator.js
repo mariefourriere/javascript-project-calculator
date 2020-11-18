@@ -1,8 +1,9 @@
-const arrayCalc = ['(', ')','AC', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '=']
+const arrayCalc = ['(', ')', 'AC', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '=']
 
 let button
 let line
 let noDoubleDots = false
+let afterResults = false
 
 document.querySelector('body');
 
@@ -28,23 +29,21 @@ resultsBox.appendChild(displayResults);
 
 
 
-document.body.addEventListener('keypress', function(e){
-    if (e.code === "Enter"){displayResults.textContent = Function('return ' + inputCalc.textContent)();
-    } 
+document.body.addEventListener('keypress', function (e) {
+    if (e.code === "Enter") {
+        displayResults.innerHTML = Function('return ' + inputCalc.innerHTML)();
+    }
 })
+
 
 
 for (let i = 0; i < arrayCalc.length; i++) {
     button = document.createElement('div')
-    button.textContent = arrayCalc[i]
+    button.innerHTML = arrayCalc[i]
     button.className = 'button is-black is-inverted is-outlined has-text-weight-bold'
 
     //styling the buttons 
-    if (i <= 3) {
-        button.className = 'button operators'
-    }
-
-    if ((i === 7) || (i === 11) || (i === 15)) {
+    if ((i <= 3) || (i === 7) || (i === 11) || (i === 15)) {
         button.className = 'button operators'
     }
 
@@ -57,125 +56,135 @@ for (let i = 0; i < arrayCalc.length; i++) {
         line.className = 'line'
     }
 
-    
-     
-   
+
+
+
 
     let calculate = arrayCalc[i];
     switch (calculate) {
 
         case 'AC':
             button.addEventListener('click', function () {
-                inputCalc.textContent = "";
-                displayResults.textContent = "";
-                if(!noDoubleDots){
+                inputCalc.innerHTML = "";
+                displayResults.innerHTML = "";
+
+                if (!noDoubleDots) {
                     noDoubleDots = true
-                    }
-                    noDoubleDots = false
-                
+                }
+                noDoubleDots = false
+
+                afterResults = false
+
             });
             break;
-        
-        case '=':
-            button.addEventListener('click', function () {
-                displayResults.textContent = Function('return ' + inputCalc.textContent)();
-                if(!noDoubleDots){
-                    noDoubleDots = true
-                    }
-                
-            })
-                         
-                
+
+
+
         case '.':
             button.addEventListener('click', function () {
-                
-                if(!noDoubleDots){
-                noDoubleDots = true
-                inputCalc.textContent += "."
-                displayResults.textContent += "." 
+
+                if (!noDoubleDots) {
+                    noDoubleDots = true
+                    inputCalc.innerHTML += "."
+                    displayResults.innerHTML += "."
                 }
-            
-                
-                
-        });      
-        break;
+
+                afterResults = false
+
+
+            });
+            break;
 
         case '+':
             button.addEventListener('click', function () {
-                inputCalc.textContent += "+"
-                displayResults.textContent += "+"
-                if(!noDoubleDots){
-                noDoubleDots = true
-               
-                }
-                noDoubleDots = false
-                
-                
-        });      
-        break;
+                inputCalc.innerHTML += " + "
+                displayResults.innerHTML += " + "
+                if (!noDoubleDots) {
+                    noDoubleDots = true
 
-        case '-':
-            button.addEventListener('click', function () {
-                inputCalc.textContent += "-"
-                displayResults.textContent += "-" 
-                if(!noDoubleDots){
-                noDoubleDots = true
                 }
                 noDoubleDots = false
-                
-                
-        });      
-        break;
 
-        case '(':
-            button.addEventListener('click', function () {
-                inputCalc.textContent += "("
-                displayResults.textContent += "(" 
-                if(!noDoubleDots){
-                noDoubleDots = true
-                }
-                noDoubleDots = false
-                
-                
-        });      
-        break;
+                afterResults = false
 
-        case ')':
+            });
+            break;
+
+        case '/':
             button.addEventListener('click', function () {
-                inputCalc.textContent += ")"
-                displayResults.textContent += ")" 
-                if(!noDoubleDots){
-                noDoubleDots = true
+                inputCalc.innerHTML += " / "
+                displayResults.innerHTML += " / "
+                if (!noDoubleDots) {
+                    noDoubleDots = true
                 }
                 noDoubleDots = false
-                
-                
-        });      
-        break;
+
+                afterResults = false
+
+            });
+            break;
+
 
         case '*':
             button.addEventListener('click', function () {
-                inputCalc.textContent += "*"
-                displayResults.textContent += "*" 
-                if(!noDoubleDots){
-                noDoubleDots = true
+                inputCalc.innerHTML += " * "
+                displayResults.innerHTML += " * "
+                if (!noDoubleDots) {
+                    noDoubleDots = true
                 }
                 noDoubleDots = false
-                
-                
-        });      
-        break;
-            
+
+                afterResults = false
+
+            });
+            break;
+
+        case '-':
+            button.addEventListener('click', function () {
+                inputCalc.innerHTML += " - "
+                displayResults.innerHTML += " - "
+                if (!noDoubleDots) {
+                    noDoubleDots = true
+                }
+                noDoubleDots = false
+
+                afterResults = false
+
+            });
+
+            break;
+
+        case '=':
+            button.addEventListener('click', function () {
+                displayResults.innerHTML = Function('return ' + inputCalc.innerHTML)();
+                inputCalc.innerHTML += " "
+                displayResults.innerHTML += " "
+                if (!noDoubleDots) {
+                    noDoubleDots = true
+                }
+                afterResults = true
+            });
+            break;
+
         default:
             button.addEventListener('click', function () {
-                inputCalc.textContent += arrayCalc[i];
-                displayResults.textContent += arrayCalc[i];
-                
+
+                if (afterResults === true) {
+                    inputCalc.innerHTML = ""
+                    displayResults.innerHTML = ""
+                }
+                afterResults = false;
+                if (afterResults === false) {
+                    inputCalc.innerHTML += arrayCalc[i];
+                    displayResults.innerHTML += arrayCalc[i];
+                }
+
             });
 
     };
 
-   
+
+
 
     contentCalc.appendChild(line);
     line.appendChild(button);
