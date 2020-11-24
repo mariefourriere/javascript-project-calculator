@@ -39,3 +39,6 @@ Using what we know about javascript, we're going to build a simple calculator ap
 
 ![Preview image of the calculator](calculator.JPG)
 
+## Sources
+Exercise part of my [BeCode](https://becode.org/) training 
+
