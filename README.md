@@ -1,6 +1,6 @@
 # Building a calculator
 
-Here is the link to the [calculator](https://mariefourriere.github.io/calculator/)
+Here is the link to the [calculator](https://mariefourriere.github.io/javascript-project-calculator/)
 
 
 ## The challenge
